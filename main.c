@@ -1,8 +1,9 @@
 #include "main.h"
 
+
 int main(void)
 {
-  _putchar('c');
+  _printf("wale%c", 'b');
   _putchar('\n');
   return 0;
 }

@@ -9,9 +9,11 @@ typedef struct func {
   void (*print_func)(va_list);
 } func_t;
 
+
 /* helper funcs */
 int _putchar(char c);
 int _strlen(char *s);
+
 
 /* print functions (based on specifier) */
 void print_char(va_list arg);
