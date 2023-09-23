@@ -3,38 +3,36 @@
 
 
 
-int _printf(const char *format, ...)
-{
-
-  int i, j;
+int _printf(const char *format, ...) {
+  int i = 0;
   va_list arg;
   func_t func_ptr[] = {
     {"s", print_str},
     {"c", print_char},
+    {"d", print_int},
     {NULL, NULL}
   };
 
-
-
   va_start(arg, format);
 
-  i = 0;
-  while(format && format[i])
-  {
-    j = 0;
-    while(j < 2)
-    {
-      if ((format[i] == 37) && (format[i + 1] == *func_ptr[j].specifier))
-      {
-        func_ptr[j].print_func(arg);
-        
-        if (format[i + 1] == '\0')
-          _putchar('\n');
+  while (format && format[i]) {
+    int j = 0;
+    if (format[i] == '%' && format[i + 1]) {
+      while (func_ptr[j].specifier) {
+        if (format[i + 1] == *func_ptr[j].specifier) {
+          func_ptr[j].print_func(arg);
+          i++;
+          break;
+        }
+        j++;
       }
-      j++;
+      i++;
+    } else {
+      _putchar(format[i]);
     }
     i++;
   }
+
   va_end(arg);
   return 0;
 }

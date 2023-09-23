@@ -3,7 +3,7 @@
 
 int main(void)
 {
-  _printf("wale%c", 'b');
+  _printf("Bola%d", 2220);
   _putchar('\n');
   return 0;
 }
