@@ -10,6 +10,8 @@ int _printf(const char *format, ...) {
     {"s", print_str},
     {"c", print_char},
     {"d", print_int},
+    {"i", print_int},
+    {"b", print_bin},
     {NULL, NULL}
   };
 
@@ -24,9 +26,13 @@ int _printf(const char *format, ...) {
           i++;
           break;
         }
+        else if (format[i + 1] == '%') {
+          _putchar('%');
+          i++;
+          break;
+        }
         j++;
       }
-      i++;
     } else {
       _putchar(format[i]);
     }

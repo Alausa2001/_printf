@@ -1,9 +1,13 @@
+#include <stdio.h>
+#include <limits.h>
 #include "main.h"
 
 
 int main(void)
 {
-  _printf("Bola%d", 2220);
-  _putchar('\n');
+  int a = 0x30;
+
+  _printf("Bola %b\n", 5);
+
   return 0;
 }

@@ -19,7 +19,7 @@ int _strlen(char *s);
 void print_char(va_list arg);
 void print_str(va_list arg);
 void print_int(va_list arg);
-
+void print_bin(va_list arg);
 
 /* custom printf */
 int _printf(const char *format, ...);
