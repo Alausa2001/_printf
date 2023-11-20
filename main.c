@@ -7,7 +7,7 @@ int main(void)
 {
   int a = 0x30;
 
-  _printf("Bola %b\n", 5);
+  _printf("%i\n", 0x48);
 
   return 0;
 }

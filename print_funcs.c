@@ -92,8 +92,10 @@ void print_bin(va_list arg)
     _putchar('0');
 
   if (dec < 0)
+  {
+    dec *= -1;
     _putchar('-');
-
+  }
 
   for (; dec > 0; idx++) {
 
