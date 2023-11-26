@@ -1,17 +1,29 @@
 #include <stddef.h>
 #include "main.h"
 
+/**
+ * _printf: A custom printf function that would function
+ * like the std printf function in C
+ *
+ * note: For the specifiers that  have been handled, I havent
+ * implemented the return value of _printf (no of printed characters)
+ */
+
 
 
 int _printf(const char *format, ...) {
   int i = 0;
   va_list arg;
   func_t func_ptr[] = {
-    {"s", print_str},
-    {"c", print_char},
-    {"d", print_int},
-    {"i", print_int},
-    {"b", print_bin},
+    {"s", s_specifier},
+    {"c", c_specifier},
+    {"d", d_specifier},
+    {"i", d_specifier},
+    {"b", b_specifier},
+    {"u", u_specifier},
+    {"o", o_specifier},
+    {"x", x_specifier},
+    {"X", X_specifier},
     {NULL, NULL}
   };
 
